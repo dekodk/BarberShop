@@ -5,17 +5,23 @@
  */
 package View;
 
+import Controller.MenuPrincipalController;
+
 /**
  *
  * @author tiago
  */
 public class MenuPrincipal extends javax.swing.JFrame {
 
+    private final MenuPrincipalController controller;
+
     /**
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal() {
         initComponents();
+        this.controller = new MenuPrincipalController(this);
+        
     }
 
     /**
@@ -60,7 +66,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         MenuItemServico.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         MenuItemServico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/icons/tesoura32-icon.png"))); // NOI18N
-        MenuItemServico.setText("  ServiÃ§o");
+        MenuItemServico.setText("  Serviço");
         MenuCadastro.add(MenuItemServico);
 
         MenuItemUsuario.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -70,17 +76,22 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(MenuCadastro);
 
-        MenuOperacao.setText("  OperaÃ§Ã£o  ");
+        MenuOperacao.setText("  Operação  ");
         MenuOperacao.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
 
         MenuItemAgenda.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         MenuItemAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/icons/agenda32-icon.png"))); // NOI18N
         MenuItemAgenda.setText("  Agenda");
+        MenuItemAgenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemAgendaActionPerformed(evt);
+            }
+        });
         MenuOperacao.add(MenuItemAgenda);
 
         jMenuBar1.add(MenuOperacao);
 
-        MenuRelatorio.setText("  RelatÃ³rio  ");
+        MenuRelatorio.setText("  Relatório  ");
         MenuRelatorio.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
 
         MenuItemRelatorio.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -107,6 +118,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void MenuItemRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemRelatorioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_MenuItemRelatorioActionPerformed
+
+    private void MenuItemAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemAgendaActionPerformed
+        this.controller.navegarParaAgenda();
+    }//GEN-LAST:event_MenuItemAgendaActionPerformed
 
     /**
      * @param args the command line arguments

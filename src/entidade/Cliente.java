@@ -6,8 +6,8 @@ public class Cliente extends Pessoa{
     private String endereco;
     private String cep;
 
-    public Cliente(String endereco, String cep, String nome, String cpf, char sexo, String dataNascimento, String telefone, String email, String rg) {
-        super(nome, cpf, sexo, dataNascimento, telefone, email, rg);
+    public Cliente(int id, String nome, char sexo , String cpf, String dataNascimento, String telefone, String email, String rg, String endereco, String cep) {
+        super(id, nome, cpf, sexo, dataNascimento, telefone, email, rg);
         this.endereco = endereco;
         this.cep = cep;
     }
@@ -26,6 +26,14 @@ public class Cliente extends Pessoa{
 
     public void setCep(String cep) {
         this.cep = cep;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     
