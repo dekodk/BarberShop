@@ -16,14 +16,14 @@ abstract public class Pessoa {
     protected String email;
     protected String rg;
 
-    public Pessoa(String nome, String cpf) {
+    public Pessoa(int id, String nome) {
+        this.id = id;
         this.nome = nome;
-        this.cpf = cpf;
     }
 
     public Pessoa(int id, String nome, String cpf, char sexo, String dataNascimento, String telefone, String email, String rg) {
+        this.id = id;
         this.nome = nome;
-        this.cpf = cpf;
         this.sexo = sexo;
         try {
             this.dataNascimento = new SimpleDateFormat("dd/MM/yyyy").parse(dataNascimento);
@@ -35,6 +35,15 @@ abstract public class Pessoa {
         this.rg = rg;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+        
     public String getNome() {
         return nome;
     }

@@ -21,7 +21,7 @@ public class LoginController {
        UsuarioDAO usuarioDAO = new UsuarioDAO();
        Usuario usuarioAutenticado = usuarioDAO.selectPorNomeESenha(usuario);
        if(usuarioAutenticado != null){
-           MenuPrincipal menu = MenuPrincipal();
+           MenuPrincipal menu = new MenuPrincipal();
            menu.setVisible(true);
            this.view.dispose();
        }else{
@@ -32,9 +32,5 @@ public class LoginController {
     public void fiztarefa(){
         System.out.println("Busquei algo do banco de dados");
         this.view.exibeMensagem("Executeio fiz tarefa");
-    }
-
-    private MenuPrincipal MenuPrincipal() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

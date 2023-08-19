@@ -1,7 +1,5 @@
 package entidade;
 
-import java.util.Date;
-
 public class Cliente extends Pessoa{
     private String endereco;
     private String cep;
@@ -36,5 +34,8 @@ public class Cliente extends Pessoa{
         this.id = id;
     }
 
-    
+    @Override
+    public String toString(){
+        return getNome();
+}
     }
